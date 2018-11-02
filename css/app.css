@@ -158,9 +158,9 @@ h1 {
 
 }
 
-.endmenu .restart i{
-    cursor: pointer;
-    font-size: 70px;
-    display: block;
-    text-align: center;
+#play-again {
+  cursor: pointer;
+  font-size: 15px;
+  display: block;
+  transform: translateX(8%);
 }
