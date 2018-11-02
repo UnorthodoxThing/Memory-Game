@@ -120,25 +120,24 @@ function gameOver() {
     // setTimer STOPS
     clearTimeout(interval);
 
-    setTimeout(function() {
-      // Display End Menu
-      const endMenu = document.querySelector(".endmenu");
-      endMenu.style.display = "block";
+    // Display End Menu
+    let endMenu = document.querySelector(".endmenu");
+    endMenu.style.display = "block";
 
-      // Append Star rating to End Menu
-      const clnStarsContainer = starsContainer.cloneNode(true);
-      endMenu.appendChild(clnStarsContainer);
-
-      // Append Restart Button
-      const clnRestartBtn = restartBtn.cloneNode(true);
-      endMenu.appendChild(clnRestartBtn);
-
-    }, 500)
-
+    const clnStarsContainer = starsContainer.cloneNode(true);
+    endMenu.appendChild(clnStarsContainer);
   }
 }
 
-
+/*
+* Play Again Button
+*/
+function playAgain(){
+    let endMenu = document.querySelector(".endmenu");
+    endMenu.style.display = "none";
+    restart();
+    init();
+}
 
 /*
 * Count move
@@ -179,7 +178,6 @@ function rating() {
   } else {
     starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>`;
   }
-
 }
 
 /*
@@ -222,33 +220,21 @@ restartBtn.addEventListener("click", function() {
 })
 
 /*
-* Restart Button for End Menu
+* Restart function
 */
-// let endRestartBtn = document.querySelector(".endmenu .restart");
-// endRestartBtn.addEventListener("click", function() {
-//   // Delete deck
-//   cardContainer.innerHTML = "";
-//
-//   // Call `init` to create new cards
-//   init();
-// 
-//   // Reset any old/ used variables
-//   matchedCards = [];
-//
-//   moves = 0;
-//   moveContainer.innerHTML = moves;
-//
-//   const endMenu = document.querySelector(".endmenu");
-//   endMenu.style.display = "none";
-//
-//   // Remove Cloned starsContainer
-//   const clnStarsContainer = document.querySelector(".endmenu .stars li");
-//   endMenu.removeChild(clnStarsContainer);
-//
-//   // Remove Cloned restartBtn
-//   let clnRestartBtn = document.querySelector(".endmenu .restart i");
-//   endMenu.removedChild(clnRestartBtn);
-// })
+function restart() {
+  // Delete deck
+  cardContainer.innerHTML = "";
+
+  // Reset any old/ used variables
+  matchedCards = [];
+
+  moves = 0;
+  moveContainer.innerHTML = moves;
+
+  const clnStarsContainer = document.querySelector(".endmenu .stars");
+  clnStarsContainer.remove(clnStarsContainer);
+}
 
 // Starts the game
 init();
