@@ -145,7 +145,7 @@ h1 {
    border-radius: 20px;
  }
 
- .endmenu h1, .endmenu h2, .endmenu h3 {
+ .endmenu h1, .endmenu h2, .endmenu button {
    text-align: center;
    font-family: monospace, sans-serif;
  }
@@ -160,7 +160,7 @@ h1 {
 
 #play-again {
   cursor: pointer;
-  font-size: 15px;
+  font-size: 17px;
   display: block;
   transform: translateX(8%);
 }

@@ -26,7 +26,7 @@ let matchedCards = [];
 */
 function init() {
   // Shuffle items
-  // shuffle(icons);
+  shuffle(icons);
 
   // Reset timer
   var timerContainer = document.querySelector(".timer");
